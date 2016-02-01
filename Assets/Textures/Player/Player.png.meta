@@ -1,0 +1,509 @@
+fileFormatVersion: 2
+guid: 82e9f3a4294bdd044b93e394343c9873
+timeCreated: 1454200517
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Player_0
+    21300002: Player_1
+    21300004: Player_2
+    21300006: Player_4
+    21300008: Player_5
+    21300010: Player_6
+    21300012: Player_7
+    21300014: Player_8
+    21300016: Player_10
+    21300018: Player_11
+    21300020: Player_12
+    21300022: Player_13
+    21300024: Player_14
+    21300026: Player_15
+    21300028: Player_16
+    21300030: Player_17
+    21300032: Player_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Player_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 263
+        width: 198
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 19, w: 0}
+      outline:
+      - - {x: 68, y: -57}
+        - {x: 99, y: 14}
+        - {x: 99, y: 83}
+        - {x: 83, y: 137}
+        - {x: -13, y: 137}
+        - {x: -33, y: 133}
+        - {x: -99, y: 88}
+        - {x: -99, y: -59}
+        - {x: 20, y: -135}
+        - {x: 38, y: -138}
+        - {x: 99, y: -138}
+        - {x: 99, y: -94}
+        - {x: 86, y: -42}
+        - {x: 70, y: -57}
+        - {x: 69, y: -62}
+      - - {x: 67, y: -28}
+        - {x: 65, y: -34}
+        - {x: 69, y: -40}
+        - {x: 72, y: -38}
+        - {x: 72, y: -30}
+        - {x: 70, y: -27}
+      - - {x: 92, y: 62}
+        - {x: 90, y: 60}
+        - {x: 93, y: 53}
+        - {x: 96, y: 53}
+        - {x: 98, y: 54}
+        - {x: 98, y: 57}
+        - {x: 96, y: 62}
+      - - {x: -65, y: 89}
+        - {x: -70, y: 89}
+        - {x: -78, y: 74}
+        - {x: -78, y: 67}
+        - {x: -72, y: 67}
+        - {x: -63, y: 81}
+        - {x: -63, y: 87}
+      - - {x: -51, y: 104}
+        - {x: -63, y: 92}
+        - {x: -61, y: 89}
+        - {x: -52, y: 89}
+        - {x: -48, y: 98}
+        - {x: -48, y: 103}
+    - name: Player_1
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 400
+        width: 133
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42.5, y: 68}
+        - {x: -48.5, y: 68}
+        - {x: -55.5, y: 65}
+        - {x: -66.5, y: 33}
+        - {x: -66.5, y: -16}
+        - {x: -40.5, y: -68}
+        - {x: 39.5, y: -68}
+        - {x: 62.5, y: -36}
+        - {x: 66.5, y: -21}
+        - {x: 66.5, y: 45}
+    - name: Player_2
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 403
+        width: 127
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 62}
+        - {x: -52.5, y: 61}
+        - {x: -63.5, y: 51}
+        - {x: -63.5, y: -33}
+        - {x: -53.5, y: -62}
+        - {x: 26.5, y: -62}
+        - {x: 58.5, y: -40}
+        - {x: 58.5, y: 39}
+        - {x: 33.5, y: 62}
+      - - {x: 59.5, y: 23}
+        - {x: 59.5, y: 21}
+        - {x: 61.5, y: 19}
+        - {x: 63.5, y: 19}
+        - {x: 63.5, y: 25}
+        - {x: 61.5, y: 25}
+    - name: Player_4
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 399
+        width: 134
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 83}
+        - {x: -67, y: 67}
+        - {x: -67, y: -19}
+        - {x: -60, y: -57}
+        - {x: -24, y: -83}
+        - {x: 34, y: -83}
+        - {x: 57, y: -80}
+        - {x: 67, y: -28}
+        - {x: 67, y: 63}
+        - {x: 37, y: 83}
+    - name: Player_5
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 372
+        width: 76
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38, y: 65.5}
+        - {x: 24, y: 76.5}
+        - {x: 9, y: 76.5}
+        - {x: -19, y: 58.5}
+        - {x: -27, y: 25.5}
+        - {x: -21, y: -14.5}
+        - {x: -12, y: -17.5}
+        - {x: -10, y: -17.5}
+        - {x: -13, y: -19.5}
+        - {x: -13, y: -21.5}
+        - {x: -12, y: -24.5}
+        - {x: -6, y: -22.5}
+        - {x: -6, y: -19.5}
+        - {x: -4, y: -22.5}
+        - {x: -10, y: -24.5}
+        - {x: -19, y: -31.5}
+        - {x: -38, y: -57.5}
+        - {x: -38, y: -75.5}
+        - {x: -37, y: -76.5}
+        - {x: -7, y: -76.5}
+        - {x: 0, y: -75.5}
+        - {x: 19, y: -70.5}
+        - {x: 38, y: -26.5}
+      - - {x: 31, y: -47.5}
+        - {x: 17, y: -56.5}
+        - {x: 8, y: -70.5}
+        - {x: 7, y: -73.5}
+        - {x: 8, y: -76.5}
+        - {x: 22, y: -76.5}
+        - {x: 38, y: -60.5}
+        - {x: 38, y: -47.5}
+      - - {x: 35, y: -3.5}
+        - {x: 33, y: -5.5}
+        - {x: 33, y: -14.5}
+        - {x: 34, y: -16.5}
+        - {x: 36, y: -16.5}
+        - {x: 38, y: -14.5}
+        - {x: 38, y: -5.5}
+        - {x: 36, y: -3.5}
+    - name: Player_6
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 254
+        width: 97
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 65.5}
+        - {x: -47.5, y: 58.5}
+        - {x: -48.5, y: 45.5}
+        - {x: -48.5, y: -62.5}
+        - {x: -47.5, y: -65.5}
+        - {x: 35.5, y: -65.5}
+        - {x: 48.5, y: -40.5}
+        - {x: 48.5, y: 53.5}
+        - {x: 42.5, y: 65.5}
+      - - {x: 4.5, y: 63.5}
+        - {x: 5.5, y: 60.5}
+        - {x: 8.5, y: 60.5}
+        - {x: 10.5, y: 62.5}
+        - {x: 9.5, y: 65.5}
+        - {x: 6.5, y: 65.5}
+    - name: Player_7
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 258
+        width: 102
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 62.5}
+        - {x: -46, y: 62.5}
+        - {x: -51, y: 51.5}
+        - {x: -51, y: -32.5}
+        - {x: -46, y: -58.5}
+        - {x: -33, y: -62.5}
+        - {x: 24, y: -62.5}
+        - {x: 51, y: -55.5}
+        - {x: 51, y: 9.5}
+        - {x: 46, y: 54.5}
+      - - {x: 37, y: -20.5}
+        - {x: 36, y: -21.5}
+        - {x: 36, y: -31.5}
+        - {x: 38, y: -33.5}
+        - {x: 40, y: -33.5}
+        - {x: 43, y: -32.5}
+        - {x: 43, y: -20.5}
+      - - {x: -51, y: -22.5}
+        - {x: -49, y: -24.5}
+        - {x: -46, y: -23.5}
+        - {x: -46, y: -13.5}
+        - {x: -48, y: -11.5}
+        - {x: -51, y: -12.5}
+      - - {x: 40, y: 47.5}
+        - {x: 40, y: 44.5}
+        - {x: 42, y: 43.5}
+        - {x: 46, y: 43.5}
+        - {x: 48, y: 46.5}
+        - {x: 47, y: 49.5}
+        - {x: 43, y: 50.5}
+    - name: Player_8
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 271
+        width: 64
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: 50.5}
+        - {x: -32, y: -8.5}
+        - {x: -32, y: -49.5}
+        - {x: -30, y: -50.5}
+        - {x: 6, y: -50.5}
+        - {x: 32, y: -24.5}
+        - {x: 32, y: 50.5}
+    - name: Player_10
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 299
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 22}
+        - {x: -25, y: 19}
+        - {x: -25, y: -14}
+        - {x: -17, y: -22}
+        - {x: 12, y: -22}
+        - {x: 25, y: -12}
+        - {x: 25, y: 9}
+        - {x: 20, y: 22}
+    - name: Player_11
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 100
+        width: 136
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58, y: 77}
+        - {x: -68, y: 20}
+        - {x: -68, y: -65}
+        - {x: -56, y: -74}
+        - {x: -46, y: -77}
+        - {x: 68, y: -77}
+        - {x: 68, y: 12}
+        - {x: 39, y: 77}
+    - name: Player_12
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 82
+        width: 98
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -51.5}
+        - {x: -24, y: -68.5}
+        - {x: -24, y: -78.5}
+        - {x: 6, y: -78.5}
+        - {x: 6, y: -77.5}
+        - {x: -10, y: -51.5}
+      - - {x: -23, y: 78.5}
+        - {x: -44, y: 78.5}
+        - {x: -49, y: 67.5}
+        - {x: -49, y: 21.5}
+        - {x: -46, y: 15.5}
+        - {x: -8, y: -78.5}
+        - {x: 34, y: -78.5}
+        - {x: 49, y: -52.5}
+        - {x: 49, y: 10.5}
+        - {x: 16, y: 59.5}
+    - name: Player_13
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 122
+        width: 53
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: 59.5}
+        - {x: -26.5, y: 54.5}
+        - {x: -26.5, y: -27.5}
+        - {x: -24.5, y: -46.5}
+        - {x: -11.5, y: -57.5}
+        - {x: -6.5, y: -59.5}
+        - {x: 26.5, y: -59.5}
+        - {x: 26.5, y: 8.5}
+        - {x: -2.5, y: 59.5}
+    - name: Player_14
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 35
+        width: 177
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 73.5}
+        - {x: -88.5, y: -50.5}
+        - {x: -88.5, y: -73.5}
+        - {x: -76.5, y: -73.5}
+        - {x: -71.5, y: -72.5}
+        - {x: 34.5, y: -41.5}
+        - {x: 88.5, y: 20.5}
+        - {x: 88.5, y: 73.5}
+      - - {x: 4.5, y: 41.5}
+        - {x: 5.5, y: 38.5}
+        - {x: 8.5, y: 38.5}
+        - {x: 10.5, y: 40.5}
+        - {x: 9.5, y: 43.5}
+        - {x: 6.5, y: 43.5}
+    - name: Player_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 84
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 45.5}
+        - {x: -42, y: 9.5}
+        - {x: -42, y: -45.5}
+        - {x: 36, y: -45.5}
+        - {x: 41, y: -31.5}
+        - {x: 42, y: -10.5}
+        - {x: 42, y: 45.5}
+    - name: Player_16
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 0
+        width: 57
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: 49}
+        - {x: -28.5, y: -37}
+        - {x: -12.5, y: -49}
+        - {x: 28.5, y: -49}
+        - {x: 28.5, y: -12}
+        - {x: 11.5, y: 49}
+    - name: Player_17
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 17
+        width: 53
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5266994, y: 0.5000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.91507, y: 32.999973}
+        - {x: -27.91507, y: 13.999973}
+        - {x: -27.91507, y: -9.000027}
+        - {x: -4.9150696, y: -22.000027}
+        - {x: 17.08493, y: -22.000027}
+        - {x: 25.08493, y: 2.9999733}
+        - {x: 25.08493, y: 32.999973}
+    - name: Player_18
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 67
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 21}
+        - {x: -16.5, y: -21}
+        - {x: 13.5, y: -21}
+        - {x: 16.5, y: -20}
+        - {x: 16.5, y: 7}
+        - {x: 13.5, y: 21}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
