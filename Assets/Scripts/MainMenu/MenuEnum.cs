@@ -2,6 +2,6 @@
 {
 	public enum MenuTypes
 	{
-		MAIN, OPTIONS, LOAD, CREDITS
+		MAIN, HELP, CREDITS
 	}
 }

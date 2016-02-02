@@ -6,16 +6,19 @@ public class MenuManager : MonoBehaviour
 {
 	public Camera mainCamera;
 	public MainMenu mainMenu;
+	public HelpMenu helpMenu;
 	public CreditsMenu creditsMenu;
 
 	private StandardMenu currentMenu;
 	private Vector3 mainMenuOriginalPosition;
+	private Vector3 helpMenuOriginalPosition;
 	private Vector3 creditsMenuOriginalPosition;
 	private Vector3 menuOffset;
 
 	void Start () 
 	{
 		mainMenuOriginalPosition = mainMenu.transform.position;
+		helpMenuOriginalPosition = helpMenu.transform.position;
 		creditsMenuOriginalPosition = creditsMenu.transform.position;
 		menuOffset = new Vector3 (0, 0, 5);
 
@@ -31,6 +34,10 @@ public class MenuManager : MonoBehaviour
 		{
 			case MenuTypes.MAIN:
 				currentMenu = mainMenu;
+			break;
+
+			case MenuTypes.HELP:
+				currentMenu = helpMenu;
 			break;
 		
 			case MenuTypes.CREDITS:
@@ -50,5 +57,6 @@ public class MenuManager : MonoBehaviour
 	{
 		mainMenu.transform.position = mainMenuOriginalPosition;
 		creditsMenu.transform.position = creditsMenuOriginalPosition;
+		helpMenu.transform.position = helpMenuOriginalPosition;
 	}
 }

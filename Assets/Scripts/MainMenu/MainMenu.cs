@@ -21,6 +21,15 @@ public class MainMenu : StandardMenu
 		Application.LoadLevel("Level_01");
 	}
 
+	public void HelpButton()
+	{
+		if(menuSelect != null && audioSource != null)
+		{
+			audioSource.PlayOneShot(menuSelect);
+		}
+		menuManager.SwitchToMenu(MenuTypes.HELP);
+	}
+
 	public void CreditsButton()
 	{
 		if(menuSelect != null && audioSource != null)
