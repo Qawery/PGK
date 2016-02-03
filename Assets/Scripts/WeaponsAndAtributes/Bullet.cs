@@ -38,25 +38,30 @@ public class Bullet : MonoBehaviour
 		transform.Translate(Vector3.forward * speed * Time.deltaTime);
 	}
 
-	void OnCollisionEnter(Collision collision)
+	void OnTriggerEnter(Collider collider)
 	{
-		if(collision.gameObject == owner)
+		if(collider.gameObject == owner)
 		{
 			//nie ma kolizji z samym sobą
 			return;
 		}
-		if(collision.gameObject.tag == "projectile")
+		if(collider.gameObject.tag == "Projectile")
 		{
 			//przelatuje przez inne pociski
 			return;
 		}
-		if(Team.isItMyAlly(ownerTag, collision.gameObject))
+		if(Team.isItMyAlly(ownerTag, collider.gameObject))
 		{
 			//przelatuje przez sojuszników
 			return;
 		}
 		//detonuje
-		detonate (collision.gameObject);
+		detonate (collider.gameObject);
+	}
+
+	void OnTriggerStay(Collider collider)
+	{
+		OnTriggerEnter(collider);
 	}
 
 	/**

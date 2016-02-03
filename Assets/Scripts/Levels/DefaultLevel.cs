@@ -47,10 +47,12 @@ public class DefaultLevel : MonoBehaviour
 	{
 		if(Time.timeScale == 0)
 		{
+			Cursor.visible = false;
 			ResumeLevel();
 		}
 		else
 		{
+			Cursor.visible = true;
 			PauseLevel();
 		}
 	}

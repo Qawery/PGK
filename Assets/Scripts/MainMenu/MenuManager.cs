@@ -25,6 +25,8 @@ public class MenuManager : MonoBehaviour
 
 	void Start () 
 	{
+		Cursor.visible = true;
+
 		mainMenuOriginalPosition = mainMenu.transform.position;
 		levelSelectOriginalPosition = levelSelect.transform.position;
 		helpOriginalPosition = help.transform.position;

@@ -9,22 +9,17 @@ public class CameraAndControll : MonoBehaviour
 	
 	private Vector3 movementDirection;
 	private float playerMovementModifier = 750.0f;
-	private float playerTurningModifier_big = 10.0f;
-	private float playerTurningModifier_small = 1f;
-	private const float TURN_BREAKING_RANGE = 15f;
-	private const float TURN_ANGLE_TOLERANCE = 1f;
-	
+
 	private float cameraTurningModifier = 100.0f;
 	private const float CAMERA_TURNING_LIMIT = 10.0f;
-	private const float MIN_CAMERA_OFFSET = -20.0f;	//Looking up
+	private const float MIN_CAMERA_OFFSET = -60.0f;	//Looking up
 	private const float MAX_CAMERA_OFFSET = 30.0f;	//Looking down
 	private float currentCameraRotationOffset = 0.0f;
 	private Vector3 currentCameraPositionOffset = new Vector3(0.0f, 0.0f, 0.0f);
 	
-	private float GATHER_RANGE = 6f;
-	
 	void Start () 
 	{
+		Cursor.visible = false;
 		if(currentCamera != null)
 		{
 			currentCameraPositionOffset = currentCamera.transform.position - transform.position;
@@ -44,7 +39,6 @@ public class CameraAndControll : MonoBehaviour
 				CameraMovement();
 				CameraLooking();
 			}
-			PlayerCommands();
 		}
 		else
 		{
@@ -142,26 +136,5 @@ public class CameraAndControll : MonoBehaviour
 		PlayerLooking(horizontalRotation);
 		currentCamera.transform.RotateAround(transform.position, currentCamera.transform.right, verticalRotation);
 		currentCameraPositionOffset = currentCamera.transform.position - transform.position;
-	}
-	
-	private void PlayerCommands()
-	{
-		//Send
-		if(Input.GetButtonDown("Fire1"))
-		{
-			//TODO crowdManager send
-		}
-		
-		//Gather
-		if(Input.GetButtonDown("Fire2"))
-		{
-			//TODO crowdManager gather
-		}
-		
-		//Disband
-		if(Input.GetButtonDown("Fire3"))
-		{
-			//TODO crowdManager disband
-		}
 	}
 }

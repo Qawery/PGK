@@ -20,12 +20,16 @@ public class DirectProjectileWeaponAI : EquipmentPieceAI
 
 	void Update()
 	{
+		if(weapon.GetMagazineSize() > 0 && weapon.GetMagazineAmmoCount() <= 0)
+		{
+			weapon.ReloadWeapon(weapon.GetMagazineSize());
+		}
 		if(base.getPermissionToOperate())
 		{
 			if(privateTarget != null && CheckTargetValidity(privateTarget) && RayTargetCheck(privateTarget))
 			{
-				weapon.aim(DetermineShootingPoint(privateTarget));
-				weapon.fire();
+				weapon.Aim(DetermineShootingPoint(privateTarget));
+				weapon.Fire();
 			}
 		}
 	}
