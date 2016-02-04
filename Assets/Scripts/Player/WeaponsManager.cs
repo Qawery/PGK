@@ -8,7 +8,8 @@ public class WeaponsManager : MonoBehaviour
 	private int currentWeaponIndex;
 	private float availableAmmo;
 	private const int MAX_AMMO = 100;
-	
+	private Health health;
+
 	void Start () 
 	{
 		availableAmmo = 0;
@@ -21,25 +22,29 @@ public class WeaponsManager : MonoBehaviour
 			}
 			EquipWeapon();
 		}
+		health = GetComponent<Health>();
 	}
 	
 	void Update () 
 	{
-		if(Input.GetButton("Fire1"))
+		if(health == null || health.IsAlive())
 		{
-			Fire();
-		}
-		else if(Input.GetKey(KeyCode.R))
-		{
-			Reload();
-		}
-		else if (Input.GetKeyDown(KeyCode.E))
-		{
-			SwitchToNextWeapon();
-		}
-		else if (Input.GetKeyDown(KeyCode.Q))
-		{
-			SwitchToPreviousWeapon();
+			if(Input.GetButton("Fire1"))
+			{
+				Fire();
+			}
+			else if(Input.GetKeyDown(KeyCode.R))
+			{
+				Reload();
+			}
+			else if (Input.GetKeyDown(KeyCode.E))
+			{
+				SwitchToNextWeapon();
+			}
+			else if (Input.GetKeyDown(KeyCode.Q))
+			{
+				SwitchToPreviousWeapon();
+			}
 		}
 	}
 

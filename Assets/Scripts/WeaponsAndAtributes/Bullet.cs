@@ -2,7 +2,7 @@
 using System.Collections;
 
 /**
- * Opisuje typowy pocisk.
+ * Opisuje typowy pocisk kierowany siłami fizycznymi.
  * */
 public class Bullet : MonoBehaviour 
 {
@@ -10,10 +10,9 @@ public class Bullet : MonoBehaviour
 	private string ownerTag;
 	public float damage;
 	public float AOE;
-	public float speed;
+	public float initialForce;
 	private float flyingTime;
 	public float flyingTimeLimit;
-	public ParticleSystem impactParticle;
 
 	void Start () 
 	{
@@ -35,7 +34,7 @@ public class Bullet : MonoBehaviour
 
 	void Movement()
 	{
-		transform.Translate(Vector3.forward * speed * Time.deltaTime);
+		//transform.Translate(Vector3.forward * speed * Time.deltaTime);
 	}
 
 	void OnTriggerEnter(Collider collider)
@@ -64,6 +63,11 @@ public class Bullet : MonoBehaviour
 		OnTriggerEnter(collider);
 	}
 
+	void OnTriggerExit(Collider collider)
+	{
+		OnTriggerEnter(collider);
+	}
+
 	/**
 	 * Detonuje pocisk.
 	 * */
@@ -74,11 +78,6 @@ public class Bullet : MonoBehaviour
 
 	private void detonate(GameObject collidedGameObject)
 	{
-		if(impactParticle != null)
-		{
-			impactParticle.Play();
-		}
-
 		if(collidedGameObject != null)
 		{
 			//zranienie trafionego celu
@@ -145,7 +144,6 @@ public class Bullet : MonoBehaviour
 				}
 			}
 		}
-
 		Destroy(gameObject); 
 	}
 
@@ -170,14 +168,14 @@ public class Bullet : MonoBehaviour
 		AOE = newAOE;
 	}
 
-	public void setSpeed(float newSpeed)
+	public void setSpeed(float newInitialForce)
 	{
-		speed = newSpeed;
+		initialForce = newInitialForce;
 	}
 
-	public float getSpeed()
+	public float getFiringForce()
 	{
-		return speed;
+		return initialForce;
 	}
 
 	public void setFlyingTimeLimit(float newFlyingTimeLimit)

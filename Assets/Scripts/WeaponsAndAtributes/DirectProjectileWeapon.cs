@@ -92,7 +92,7 @@ public class DirectProjectileWeapon : EquipmentAndWeapon
 		newBulletInstance.GetComponent<Bullet> ().setOwner (gameObject);
 		if(newBulletInstance.GetComponent<Rigidbody>() != null)
 		{
-			newBulletInstance.GetComponent<Rigidbody>().AddForce(directionToAim * newBulletInstance.GetComponent<Bullet>().getSpeed());
+			newBulletInstance.GetComponent<Rigidbody>().AddForce(directionToAim * newBulletInstance.GetComponent<Bullet>().getFiringForce());
 		}
 
 		if(audioSource != null && firingSound != null)
@@ -123,6 +123,7 @@ public class DirectProjectileWeapon : EquipmentAndWeapon
 	{
 		if(remainingReloadTime <= 0)
 		{
+			remainingReloadTime = magazineReloadTime;
 			currentAmmoInMagazine = newAmmoCount;
 			if(currentAmmoInMagazine > maxAmmoInMagazine)
 			{
