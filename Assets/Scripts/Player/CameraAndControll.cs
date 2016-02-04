@@ -16,7 +16,8 @@ public class CameraAndControll : MonoBehaviour
 	private const float MAX_CAMERA_OFFSET = 30.0f;	//Looking down
 	private float currentCameraRotationOffset = 0.0f;
 	private Vector3 currentCameraPositionOffset = new Vector3(0.0f, 0.0f, 0.0f);
-	
+	private float groundedCooldown;
+
 	void Start () 
 	{
 		Cursor.visible = false;
@@ -27,10 +28,16 @@ public class CameraAndControll : MonoBehaviour
 		
 		playerRigidBody = GetComponent<Rigidbody>();
 		health = GetComponent<Health>();
+		groundedCooldown = 0f;
 	}
 	
 	void Update () 
 	{
+		if(groundedCooldown > 0)
+		{
+			groundedCooldown -= Time.deltaTime;
+		}
+
 		if(health == null || health.IsAlive())
 		{
 			PlayerMovement ();
@@ -49,37 +56,45 @@ public class CameraAndControll : MonoBehaviour
 			}
 		}
 	}
-	
+
+	void OnCollisionStay()
+	{
+		groundedCooldown = 0.25f;
+	}
+
 	private void PlayerMovement()
 	{
-		if(currentCamera != null) 
+		if(groundedCooldown > 0)
 		{
-			movementDirection = Vector3.zero;
-			movementDirection += Input.GetAxis ("Vertical") * (Quaternion.Euler (0, -90, 0) * currentCamera.transform.right);
-			movementDirection += Input.GetAxis ("Horizontal") * currentCamera.transform.right;
-			
-			if(playerRigidBody != null) 
+			if(currentCamera != null) 
 			{
-				playerRigidBody.velocity = movementDirection * playerMovementModifier * Time.deltaTime;
+				movementDirection = Vector3.zero;
+				movementDirection += Input.GetAxis ("Vertical") * (Quaternion.Euler (0, -90, 0) * currentCamera.transform.right);
+				movementDirection += Input.GetAxis ("Horizontal") * currentCamera.transform.right;
+				
+				if(playerRigidBody != null) 
+				{
+					playerRigidBody.velocity = movementDirection * playerMovementModifier * Time.deltaTime;
+				} 
+				else 
+				{
+					//TODO Movement without RigidBody
+				}
 			} 
 			else 
 			{
-				//TODO Movement without RigidBody
-			}
-		} 
-		else 
-		{
-			movementDirection = Vector3.zero;
-			movementDirection += Input.GetAxis ("Vertical") * Vector3.forward;
-			movementDirection += Input.GetAxis ("Horizontal") * Vector3.right;
-			
-			if(playerRigidBody != null) 
-			{
-				playerRigidBody.velocity = movementDirection * playerMovementModifier * Time.deltaTime;
-			} 
-			else 
-			{
-				//TODO Movement without RigidBody and Camera
+				movementDirection = Vector3.zero;
+				movementDirection += Input.GetAxis ("Vertical") * Vector3.forward;
+				movementDirection += Input.GetAxis ("Horizontal") * Vector3.right;
+				
+				if(playerRigidBody != null) 
+				{
+					playerRigidBody.velocity = movementDirection * playerMovementModifier * Time.deltaTime;
+				} 
+				else 
+				{
+					//TODO Movement without RigidBody and Camera
+				}
 			}
 		}
 	}
