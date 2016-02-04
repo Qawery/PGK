@@ -6,7 +6,7 @@ public class CameraAndControll : MonoBehaviour
 	public Transform currentCamera;
 	private Rigidbody playerRigidBody;
 	private Health health;
-	
+	private WeaponsManager weaponsManager;
 	private Vector3 movementDirection;
 	private float playerMovementModifier = 750.0f;
 
@@ -29,6 +29,8 @@ public class CameraAndControll : MonoBehaviour
 		playerRigidBody = GetComponent<Rigidbody>();
 		health = GetComponent<Health>();
 		groundedCooldown = 0f;
+
+		weaponsManager = GetComponent<WeaponsManager> ();
 	}
 	
 	void Update () 
@@ -107,10 +109,7 @@ public class CameraAndControll : MonoBehaviour
 	
 	private void PlayerLooking(float horizontalRotation)
 	{
-		if(currentCamera != null) 
-		{
-			transform.RotateAround(transform.position, Vector3.up, horizontalRotation);
-		}
+		transform.RotateAround(transform.position, Vector3.up, horizontalRotation);
 	}
 	
 	private void CameraLooking()
@@ -151,5 +150,22 @@ public class CameraAndControll : MonoBehaviour
 		PlayerLooking(horizontalRotation);
 		currentCamera.transform.RotateAround(transform.position, currentCamera.transform.right, verticalRotation);
 		currentCameraPositionOffset = currentCamera.transform.position - transform.position;
+
+		if(weaponsManager != null)
+		{
+			//TODO celowanie w pionie
+			/*
+			Ray ray = new Ray(Camera.main.transform.position + Camera.main.transform.forward*currentCameraPositionOffset.magnitude, Camera.main.transform.forward);
+			RaycastHit hit;
+			if(Physics.Raycast(ray, out hit, 1000))
+			{
+				weaponsManager.Aim(hit.point);
+			}
+			else
+			{
+				weaponsManager.Aim(Camera.main.transform.position);
+			}
+			*/
+		}
 	}
 }

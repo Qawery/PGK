@@ -11,6 +11,8 @@ public class HUD : MonoBehaviour
 	public Text missionAnnoucmentText;
 	public Text missionStatusText;
 	public Text pauseText;
+	public Text objectiveText;
+	public Text ammoCount;
 
 	private float annoucmentTime;
 
@@ -20,6 +22,7 @@ public class HUD : MonoBehaviour
 		missionAnnoucmentText.enabled = false;
 		missionStatusText.enabled = false;
 		pauseText.enabled = false;
+		objectiveText.enabled = false;
 	}
 
 	void Update()
@@ -86,10 +89,22 @@ public class HUD : MonoBehaviour
 	public void ShowPause()
 	{
 		pauseText.enabled = true;
+		objectiveText.enabled = true;
 	}
 	
 	public void HidePause()
 	{
 		pauseText.enabled = false;
+		objectiveText.enabled = false;
+	}
+
+	public void SetObjectiveText(string text)
+	{
+		objectiveText.text = text;
+	}
+
+	public void SetWeaponCount(float magazine, float magazineCapacity, float total)
+	{
+		ammoCount.text = ("Weapon: " + magazine + "/" + magazineCapacity + "\n" + "Total: " + total);
 	}
 }

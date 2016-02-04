@@ -5,9 +5,10 @@ using System.Collections.Generic;
 public class WeaponsManager : MonoBehaviour 
 {
 	public DirectProjectileWeapon[] availableWeapons;
+	public HUD hud;
 	private int currentWeaponIndex;
 	private float availableAmmo;
-	private const int MAX_AMMO = 100;
+	private const int MAX_AMMO = 200;
 	private Health health;
 
 	void Start () 
@@ -45,6 +46,31 @@ public class WeaponsManager : MonoBehaviour
 			{
 				SwitchToPreviousWeapon();
 			}
+		}
+		if(availableWeapons!= null && availableWeapons[currentWeaponIndex] != null && hud != null)
+		{
+			hud.SetWeaponCount (availableWeapons[currentWeaponIndex].GetMagazineAmmoCount(), availableWeapons[currentWeaponIndex].GetMagazineSize(), availableAmmo);
+		}
+		else if(hud != null)
+		{
+			hud.SetWeaponCount (0, 0, availableAmmo);
+		}
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if(collision.collider.gameObject.tag == "Ammo")
+		{
+			collision.collider.gameObject.GetComponent<AmmoBox>().ReturnAmmo(AcquireAmmo(collision.collider.gameObject.GetComponent<AmmoBox>().AcquireAmmo(MAX_AMMO - availableAmmo)));
+		}
+	}
+
+	public void Aim(GameObject target)
+	{
+		if(availableWeapons[currentWeaponIndex] != null)
+		{
+			availableWeapons[currentWeaponIndex].Aim (target);
+			//TODO ANIMACJA CELOWANIA
 		}
 	}
 

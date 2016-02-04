@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 
 /**
- * Opisuje warunki zwycięstwa i przegranej poziomu 01.
+ * Opisuje warunki zwycięstwa i przegranej poziomu 02.
  * */
-public class Level01 : DefaultLevel
+public class Level02 : DefaultLevel
 {
 	public ZoneTrigger exit;
-
+	
 	public override void Start () 
 	{
-		hud.SetObjectiveText ("Objective: \n Reunite with your squad");
+		hud.SetObjectiveText ("Objectives: \n Reach rally point \n Eliminate every enemy in rally point");
 		if(player != null)
 		{
 			playerHealth = player.GetComponent<Health>();
@@ -27,16 +27,12 @@ public class Level01 : DefaultLevel
 		isVictoryConditionMet = false;
 		isDefeatConditionMet = false;
 	}
-
+	
 	protected override bool VictoryCondition()
 	{
 		if(isDefeatConditionMet)
 		{
 			return false;
-		}
-		if(exit.isPlayerInRange)
-		{
-			isVictoryConditionMet = true;
 		}
 		return isVictoryConditionMet;
 	}
