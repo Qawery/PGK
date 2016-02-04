@@ -26,15 +26,6 @@ public class Bullet : MonoBehaviour
 		{
 			detonate();
 		}
-		else
-		{
-			Movement();
-		}
-	}
-
-	void Movement()
-	{
-		//transform.Translate(Vector3.forward * speed * Time.deltaTime);
 	}
 
 	void OnTriggerEnter(Collider collider)
@@ -56,16 +47,6 @@ public class Bullet : MonoBehaviour
 		}
 		//detonuje
 		detonate (collider.gameObject);
-	}
-
-	void OnTriggerStay(Collider collider)
-	{
-		OnTriggerEnter(collider);
-	}
-
-	void OnTriggerExit(Collider collider)
-	{
-		OnTriggerEnter(collider);
 	}
 
 	/**

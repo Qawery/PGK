@@ -85,7 +85,10 @@ public class PatrolAI : MonoBehaviour
 		else
 		{
 			DeathAnimation();
-			navAgent.enabled = false;
+			if(navAgent != null)
+			{
+				navAgent.enabled = false;
+			}
 		}
 	}
 
@@ -200,7 +203,10 @@ public class PatrolAI : MonoBehaviour
 					{
 						case PatrolEndingPolicy.IDLE:
 							patrolPoints.Clear();
-							navAgent.destination = transform.position;
+							if(navAgent != null)
+							{
+								navAgent.destination = transform.position;
+							}
 						break;
 
 						case PatrolEndingPolicy.REVERSE:
@@ -216,7 +222,10 @@ public class PatrolAI : MonoBehaviour
 
 						default:
 							patrolPoints.Clear();
-							navAgent.destination = transform.position;
+							if(navAgent != null)
+							{
+								navAgent.destination = transform.position;
+							}
 						break;
 					}
 				}
@@ -227,7 +236,10 @@ public class PatrolAI : MonoBehaviour
 					{
 						case PatrolEndingPolicy.IDLE:
 							patrolPoints.Clear();
-							navAgent.destination = transform.position;
+							if(navAgent != null)
+							{
+								navAgent.destination = transform.position;
+							}
 						break;
 
 						case PatrolEndingPolicy.REVERSE:
@@ -243,7 +255,10 @@ public class PatrolAI : MonoBehaviour
 
 						default:
 							patrolPoints.Clear();
-							navAgent.destination = transform.position;
+							if(navAgent != null)
+							{
+								navAgent.destination = transform.position;
+							}
 						break;
 					}
 				}
@@ -270,7 +285,10 @@ public class PatrolAI : MonoBehaviour
 		{
 			if(Vector3.Distance(transform.position, patrolPoints[patrolPointsIndex]) > destinationTolerence)
 			{
-				navAgent.destination = patrolPoints[patrolPointsIndex];
+				if(navAgent != null)
+				{
+					navAgent.destination = patrolPoints[patrolPointsIndex];
+				}
 			}
 			else
 			{
@@ -469,7 +487,10 @@ public class PatrolAI : MonoBehaviour
 	 * */
 	private void CloseOnTarget()
 	{
-		navAgent.destination = equipmentAI.currentTarget.transform.position;
+		if(navAgent != null)
+		{
+			navAgent.destination = equipmentAI.currentTarget.transform.position;
+		}
 	}
 
 	/**
@@ -478,7 +499,10 @@ public class PatrolAI : MonoBehaviour
 	 * */
 	private void TargetInteraction()
 	{
-		navAgent.destination = transform.position;
+		if(navAgent != null)
+		{
+			navAgent.destination = transform.position;
+		}
 	}
 
 	/**
@@ -492,7 +516,10 @@ public class PatrolAI : MonoBehaviour
 		standByTimeElapsed += Time.deltaTime;
 		if(Vector3.Distance(transform.position, lastTargetLocation) > destinationTolerence && standByTimeElapsed < searchTime)
 		{
-			navAgent.destination = lastTargetLocation;
+			if(navAgent != null)
+			{
+				navAgent.destination = lastTargetLocation;
+			}
 		}
 		else
 		{
@@ -538,7 +565,10 @@ public class PatrolAI : MonoBehaviour
 		{
 			if(Vector3.Distance(transform.position, lastAgentLocationOnPath) > destinationTolerence)
 			{
-				navAgent.destination = lastAgentLocationOnPath;
+				if(navAgent != null)
+				{
+					navAgent.destination = lastAgentLocationOnPath;
+				}
 			}
 			else
 			{

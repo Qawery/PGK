@@ -71,24 +71,31 @@ public class WeaponsManager : MonoBehaviour
 	{
 		if(availableWeapons[currentWeaponIndex] != null && availableWeapons[currentWeaponIndex].GetRemainingReloadTime() <= 0)
 		{
-			float ammoNeeded = (availableWeapons[currentWeaponIndex].GetMagazineSize() - availableWeapons[currentWeaponIndex].GetMagazineAmmoCount())*availableWeapons[currentWeaponIndex].GetAmmoPerShot();
-			if(availableAmmo >= ammoNeeded)
+			if(availableWeapons[currentWeaponIndex].GetAmmoPerShot() > 0)
 			{
-				if(availableWeapons[currentWeaponIndex].ReloadWeapon(availableWeapons[currentWeaponIndex].GetMagazineSize()))
+				float ammoNeeded = (availableWeapons[currentWeaponIndex].GetMagazineSize() - availableWeapons[currentWeaponIndex].GetMagazineAmmoCount())*availableWeapons[currentWeaponIndex].GetAmmoPerShot();
+				if(availableAmmo >= ammoNeeded)
 				{
-					availableAmmo -= ammoNeeded;
+					if(availableWeapons[currentWeaponIndex].ReloadWeapon(availableWeapons[currentWeaponIndex].GetMagazineSize()))
+					{
+						availableAmmo -= ammoNeeded;
+					}
+				}
+				else
+				{
+					int loadedShots = Mathf.FloorToInt(availableAmmo/availableWeapons[currentWeaponIndex].GetAmmoPerShot());
+					if(loadedShots > 0)
+					{
+						if(availableWeapons[currentWeaponIndex].ReloadWeapon(availableWeapons[currentWeaponIndex].GetMagazineAmmoCount() + loadedShots))
+						{
+							availableAmmo = (availableAmmo - (loadedShots*availableWeapons[currentWeaponIndex].GetAmmoPerShot()));
+						}
+					}
 				}
 			}
 			else
 			{
-				int loadedShots = Mathf.FloorToInt(availableAmmo/availableWeapons[currentWeaponIndex].GetAmmoPerShot());
-				if(loadedShots > 0)
-				{
-					if(availableWeapons[currentWeaponIndex].ReloadWeapon(availableWeapons[currentWeaponIndex].GetMagazineAmmoCount() + loadedShots))
-					{
-						availableAmmo = (availableAmmo - (loadedShots*availableWeapons[currentWeaponIndex].GetAmmoPerShot()));
-					}
-				}
+				availableWeapons[currentWeaponIndex].ReloadWeapon(availableWeapons[currentWeaponIndex].GetMagazineSize());
 			}
 			//TODO: ANIMACJA PRZEŁADOWANIA
 		}

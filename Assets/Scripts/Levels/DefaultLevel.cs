@@ -7,14 +7,14 @@ public class DefaultLevel : MonoBehaviour
 	public GameObject player;
 
 	protected Health playerHealth;
-
-	protected float transitionTime;
-	private const float DEFAULT_TRANSITION_TIME = 4f;
-
 	protected float originalTimeScale;
+	protected float transitionTime;
+	protected const float DEFAULT_TRANSITION_TIME = 4f;
 
+	protected bool isVictoryConditionMet;
+	protected bool isDefeatConditionMet;
 
-	void Start () 
+	public virtual void Start () 
 	{
 		if(player != null)
 		{
@@ -22,9 +22,12 @@ public class DefaultLevel : MonoBehaviour
 		}
 		transitionTime = DEFAULT_TRANSITION_TIME;
 		originalTimeScale = 1f;
+
+		isVictoryConditionMet = false;
+		isDefeatConditionMet = false;
 	}
 	
-	void Update () 
+	public void Update () 
 	{
 		InputResolve();
 		ScenarioStatusUpdate();
@@ -116,7 +119,11 @@ public class DefaultLevel : MonoBehaviour
 	
 	protected virtual bool VictoryCondition()
 	{
-		return false;
+		if(isDefeatConditionMet)
+		{
+			return false;
+		}
+		return isVictoryConditionMet;
 	}
 	
 	protected virtual void VictoryTransition()
@@ -136,11 +143,15 @@ public class DefaultLevel : MonoBehaviour
 	
 	protected virtual bool DefeatCondition()
 	{
+		if(isVictoryConditionMet)
+		{
+			return false;
+		}
 		if(playerHealth != null  && !playerHealth.IsAlive())
 		{
-			return true;
+			isDefeatConditionMet = true;
 		}
-		return false;
+		return isDefeatConditionMet;
 	}
 	
 	protected virtual void DefeatTransition()

@@ -27,7 +27,7 @@ public class DirectProjectileWeapon : EquipmentAndWeapon
 	{
 		areWeAimingAtPoint = true;
 		remainingReloadTime = 0;
-		currentAmmoInMagazine = 0;
+		currentAmmoInMagazine = maxAmmoInMagazine;
 		aimpoint = new Vector3 (0, 0, 0);
 	}
 
