@@ -640,6 +640,16 @@ public class PatrolAI : MonoBehaviour
 		RestartState ();
 	}
 
+	public void SetPatrolRoute(Vector3 newPoint)
+	{
+		if(patrolPoints == null)
+		{
+			patrolPoints = new List<Vector3>();
+		}
+		patrolPoints.Clear ();
+		patrolPoints.Add (newPoint);
+	}
+
 	/**
 	 * Restartuje zachowanie agenta.
 	 * */

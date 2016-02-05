@@ -13,6 +13,7 @@ public class HUD : MonoBehaviour
 	public Text pauseText;
 	public Text objectiveText;
 	public Text ammoCount;
+	public Text weaponName;
 
 	private float annoucmentTime;
 
@@ -106,5 +107,10 @@ public class HUD : MonoBehaviour
 	public void SetWeaponCount(float magazine, float magazineCapacity, float total)
 	{
 		ammoCount.text = ("Weapon: " + magazine + "/" + magazineCapacity + "\n" + "Total: " + total);
+	}
+
+	public void SetWeaponName(string name)
+	{
+		weaponName.text = name;
 	}
 }

@@ -193,6 +193,22 @@ public class WeaponsManager : MonoBehaviour
 				childRenderers[i].enabled = true;
 			}
 		}
+
+		switch (currentWeaponIndex)
+		{
+			case 0:
+				hud.SetWeaponName("Pistol");
+			break;
+
+			case 1:
+				hud.SetWeaponName("Rifle");
+			break;
+
+			default:
+				hud.SetWeaponName("None");
+			break;
+
+		}
 		//TODO ANIMACJA WYJMOWANIA BRONI
 	}
 }

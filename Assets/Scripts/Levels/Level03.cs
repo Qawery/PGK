@@ -2,17 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
-/**
- * Opisuje warunki zwycięstwa i przegranej poziomu 01.
- * */
-public class Level01 : DefaultLevel
+public class Level03 : DefaultLevel
 {
-	public ZoneTrigger exit;
-
+	public List<GameObject> currentEnemies;
+	
 	public override void Start () 
 	{
-		hud.SetObjectiveText ("Objective: \n -Reunite with your squad");
+		hud.SetObjectiveText ("Objectives: \n -Hold out as long as you can");
 		if(player != null)
 		{
 			playerHealth = player.GetComponent<Health>();
@@ -27,20 +23,45 @@ public class Level01 : DefaultLevel
 		isVictoryConditionMet = false;
 		isDefeatConditionMet = false;
 	}
-
+	
 	protected override bool VictoryCondition()
 	{
 		if(isDefeatConditionMet)
 		{
 			return false;
 		}
-		if(exit.isPlayerInRange)
+		if(currentEnemies.Count <= 0 && false)
 		{
 			isVictoryConditionMet = true;
 		}
 		return isVictoryConditionMet;
 	}
-
+	
+	protected override void ScenarioPlayUpdate()
+	{
+		if(currentEnemies.Count > 0)
+		{
+			//walka gracza z falą, oczyszczamy listę z trupów
+			int i=0; 
+			while(i < currentEnemies.Count)
+			{
+				if(currentEnemies[i] == null || currentEnemies[i].GetComponent<Health>() == null || !currentEnemies[i].GetComponent<Health>().IsAlive())
+				{
+					currentEnemies.RemoveAt(i);
+				}
+				else
+				{
+					i++;
+				}
+				if(currentEnemies.Count <= 0)
+				{
+					break;
+				}
+			}
+			return;
+		}
+	}
+	
 	protected override void VictoryTransition()
 	{
 		if(transitionTime >= DEFAULT_TRANSITION_TIME)
@@ -52,7 +73,7 @@ public class Level01 : DefaultLevel
 		transitionTime -= Time.deltaTime;
 		if(transitionTime <= 0)
 		{
-			Application.LoadLevel("Level_02");
+			Application.LoadLevel("MainMenu");
 		}
 	}
 }

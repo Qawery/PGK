@@ -148,7 +148,7 @@ public class CameraAndControll : MonoBehaviour
 		
 		currentCamera.transform.RotateAround(transform.position, Vector3.up, horizontalRotation);
 		PlayerLooking(horizontalRotation);
-		currentCamera.transform.RotateAround(transform.position, currentCamera.transform.right, verticalRotation);
+		//currentCamera.transform.RotateAround(transform.position, currentCamera.transform.right, verticalRotation);
 		currentCameraPositionOffset = currentCamera.transform.position - transform.position;
 
 		if(weaponsManager != null)

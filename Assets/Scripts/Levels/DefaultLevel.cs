@@ -14,6 +14,8 @@ public class DefaultLevel : MonoBehaviour
 	protected bool isVictoryConditionMet;
 	protected bool isDefeatConditionMet;
 
+	private bool wasObjectiveShown;
+
 	public virtual void Start () 
 	{
 		if(player != null)
@@ -25,10 +27,17 @@ public class DefaultLevel : MonoBehaviour
 
 		isVictoryConditionMet = false;
 		isDefeatConditionMet = false;
+		wasObjectiveShown = false;
 	}
 	
 	public void Update () 
 	{
+		if(!wasObjectiveShown)
+		{
+			wasObjectiveShown= !wasObjectiveShown;
+			PauseLevel ();
+		}
+
 		InputResolve();
 		ScenarioStatusUpdate();
 		HudUpdate();
