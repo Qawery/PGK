@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public class Level03 : DefaultLevel
 {
 	public List<GameObject> currentEnemies;
-	
+	public List<EnemyWave> waveList;
+	public EnemyWave reinforcments;
+
 	public override void Start () 
 	{
 		hud.SetObjectiveText ("Objectives: \n -Hold out as long as you can");
@@ -30,7 +32,7 @@ public class Level03 : DefaultLevel
 		{
 			return false;
 		}
-		if(currentEnemies.Count <= 0 && false)
+		if(currentEnemies.Count <= 0 && waveList.Count <= 0)
 		{
 			isVictoryConditionMet = true;
 		}
@@ -58,6 +60,24 @@ public class Level03 : DefaultLevel
 					break;
 				}
 			}
+			return;
+		}
+		else if(waveList != null && waveList.Count > 0)
+		{
+			//spawnowanie nowej fali
+			if(waveList[0] != null)
+			{
+				List<GameObject> spawnedEnemyList = waveList[0].SpawnWave();
+				if(spawnedEnemyList != null && spawnedEnemyList.Count > 0)
+				{
+					currentEnemies = spawnedEnemyList;
+				}
+				if(waveList.Count == 1)
+				{
+					reinforcments.SpawnWave();
+				}
+			}
+			waveList.RemoveAt(0);
 			return;
 		}
 	}

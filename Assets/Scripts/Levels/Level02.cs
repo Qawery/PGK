@@ -78,7 +78,7 @@ public class Level02 : DefaultLevel
 		transitionTime -= Time.deltaTime;
 		if(transitionTime <= 0)
 		{
-			Application.LoadLevel("Level_02");
+			Application.LoadLevel("Level_03");
 		}
 	}
 }
