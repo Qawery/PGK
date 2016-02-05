@@ -57,6 +57,10 @@ public class CameraAndControll : MonoBehaviour
 				CameraLooking();
 			}
 		}
+		if(health != null && !health.IsAlive())
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	void OnCollisionStay()

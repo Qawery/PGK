@@ -10,7 +10,7 @@ public class MainMenu : StandardMenu
 	public void NewGameButton()
 	{
 		menuManager.PlayMenuSelectSound();
-		Application.LoadLevel("Level_01");
+		Application.LoadLevel("Intro");
 	}
 
 	public void LevelSelectButton()

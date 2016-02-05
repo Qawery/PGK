@@ -93,7 +93,7 @@ public class Level03 : DefaultLevel
 		transitionTime -= Time.deltaTime;
 		if(transitionTime <= 0)
 		{
-			Application.LoadLevel("MainMenu");
+			Application.LoadLevel("Epilogue");
 		}
 	}
 }

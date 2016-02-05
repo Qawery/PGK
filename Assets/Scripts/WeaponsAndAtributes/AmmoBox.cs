@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AmmoBox : MonoBehaviour 
 {
-	public float availableAmmo = 100f;
+	public float availableAmmo;
 
 	void Update()
 	{
@@ -15,7 +15,7 @@ public class AmmoBox : MonoBehaviour
 
 	public float AcquireAmmo(float ammoReduction)
 	{
-		if(ammoReduction >= availableAmmo)
+		if(ammoReduction <= availableAmmo)
 		{
 			availableAmmo -= ammoReduction;
 			return ammoReduction;
